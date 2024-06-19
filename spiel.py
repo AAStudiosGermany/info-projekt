@@ -1,5 +1,8 @@
 from time import sleep
 import pygame
+import spieler
+import punkte
+import Geister
 pygame.init()
 
 display_width = 1280 
@@ -15,12 +18,18 @@ gameDisplay.blit(background, (0, 0))
 pygame.display.update()
 
 spielaktiv = True
+velocity = 10
 
 while spielaktiv:
     # Überprüfen, ob Nutzer eine Aktion durchgeführt hat
+    spieler.pacman_erstellen(gameDisplay)
+    pygame.display.update()
     for event in pygame.event.get():
+        
+        spieler.pacmanbewegung(event, velocity, gameDisplay)
+        
         if event.type == pygame.QUIT:
             spielaktiv = False
+    pygame.display.update()
 
-sleep(3)
 
