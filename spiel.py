@@ -25,6 +25,7 @@ pygame.display.update()
 pacmanimg = pygame.image.load('pacman.png')
 pacmanimg = pygame.transform.smoothscale(pacmanimg,(pacmanscale,pacmanscale))
 
+linienliste = []
 while spielaktiv:
 
     gameDisplay.blit(background, (0, 0))
@@ -35,7 +36,16 @@ while spielaktiv:
         pacmanx += (keys[pygame.K_d] - keys[pygame.K_a]) * velocity
     elif keys[pygame.K_s] or keys[pygame.K_w]:
         pacmany += (keys[pygame.K_s] - keys[pygame.K_w]) * velocity
-    
+    if keys[pygame.K_e]:
+        liste = list(pygame.mouse.get_pos())
+        linienliste.append(liste)
+        print(pygame.mouse.get_pos())
+        sleep(0.5)
+    if pacmanx < -5:
+        pacmanx = 1280
+    elif pacmanx > 1285:
+        pacmanx = 0
+
     #spielerbild drehen
     if keys[pygame.K_a]:
         gameDisplay.blit(spieler.rot_center(pacmanimg,180),(pacmanx,pacmany))
@@ -54,3 +64,4 @@ while spielaktiv:
     clock.tick(40)
 
 
+print(linienliste)
