@@ -13,7 +13,7 @@ velocity = 5
 pacmanx = 50
 pacmany = 50
 
-
+score = 0
 gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption('Pacman')
 clock = pygame.time.Clock()
