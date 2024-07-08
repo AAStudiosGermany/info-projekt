@@ -3,6 +3,7 @@ import pygame
 import spieler
 import punkte
 import Geister
+import levellinien
 pygame.init()
 
 display_width = 1280 
@@ -45,7 +46,7 @@ while spielaktiv:
         pacmanx = 1280
     elif pacmanx > 1285:
         pacmanx = 0
-
+    levellinien.levellininien_malen(gameDisplay)
     #spielerbild drehen
     if keys[pygame.K_a]:
         gameDisplay.blit(spieler.rot_center(pacmanimg,180),(pacmanx,pacmany))
