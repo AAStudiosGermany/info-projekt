@@ -4,7 +4,7 @@ def pacman_erstellen(gameDisplay):
     
     global pacmanimg 
     pacmanimg = pygame.image.load('pacman.png')
-    pacmanimg = pygame.transform.smoothscale(pacmanimg,(45,45))
+    pacmanimg = pygame.transform.smoothscale(pacmanimg,(40,40))
 
 def pacmanbewegung(event,velocity,gamedisplay,x,y):
 
